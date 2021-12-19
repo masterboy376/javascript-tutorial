@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+let regex = /s[a-z]m/;
+
+// short hand character classes
+regex = /\wam/ ;          // word character( \w) -> only one _ or alphabet or number
+regex = /\w+am/;          // word character( \w) -> one or more _ or alphabet or number
+regex = /\Wbhai/;         //one non word character(\W)->bhai will be displayed with space
+regex = /\W+bhai/;        // one or more non word character(\W)->bhai will be displayed with space
+regex = /\d999/;          //triple 9 after any one digit
+regex = /\d+999/;         //triple 9 after any one or more digit
+regex = /\D999/;          //triple 9 after any one non-digit
+regex = /\D+999/;         //triple 9 after any one or more non-digit
+regex = /\w+\W+\d+\D+999/;//multiple character class
+regex = /\ska number/;    //one space
+regex = /\s+ka number/;   //one or more space
+regex = /\Ska number/;    //one or more non-space
+regex = /\S+ka number/;   //one or more non-space
+regex = /sSm\b/;          //word boundary -> new word is starting after this
+regex = /sSm\B/;          //non-word boundary -> no new word is starting after this
+
+//Assertions
+regex = /s(?=a)/;         //only 'a' after 's'
+regex = /s(?!a)/;         //only 'a' is not after 's'
+
+
+
+const str = `sa &&&*&*&bhai sSm saaaaaaaaam sSmsaaaaaaaaam sasam. sam   ka number samka number 35239584sam9999`;
+
+let result = regex.exec(str);
+console.log(`the result of exec is `, result);
+
+if(regex.test(str)){
+    console.log(`the string "${str}" matches the expression "${regex.source}"`);
+}
+else{
+    console.log(`the string "${str}" does not matches the expression "${regex.source}"`);
+}
+
+</script>
+</html>

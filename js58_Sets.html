@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+let mySet = new Set();
+let myNewSet = new Set([1,true,'sam',function greet(){}, {a:1,b:2}, 1]);// no repeatition in the sets
+console.log(mySet);
+console.log(myNewSet);
+
+mySet.add('sam');
+mySet.add('kath');
+mySet.add('sam');
+mySet.add('1');
+mySet.add(1);
+console.log(mySet);// note: there will be only one sam in the set.
+
+console.log(mySet.size);
+
+console.log(mySet.has(1));
+console.log(mySet.has(2));
+
+mySet.delete('1');
+console.log(mySet);
+
+for (items of mySet){
+    console.log(items);
+}
+mySet.forEach((items)=>{
+    console.log(items)
+})
+
+//Quiz: removing the repeated items in the array
+let myArray = [1,1,1,1,12,2,24,5,2,56,56,57,7,7,77,14];
+console.log('array before fixing '+ myArray);
+let functionSet = new Set(myArray);
+myArray = Array.from(functionSet);
+console.log('array after fixing '+ myArray);
+
+</script>
+</html>

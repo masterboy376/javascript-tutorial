@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">this is heading</h1>
+        <div class="child" id="child1">child1</div>
+        <div class="child" id="child2">child2</div>
+        <div class="child" id="child3">child3</div>
+        <div class="child" id="child4">child4</div>
+        <form action="" method="post">
+            <input type="text" name="" id="">
+            <input type="submit" value="submit">
+        </form>
+        <form action="" method="post">
+            <input type="text" name="" id="">
+            <input type="text" name="" id="">
+            <input type="submit" value="submit">
+        </form>
+        <a href="#">link a</a>
+        <a href="#">link b</a>
+        <img src="" alt="">
+        <img src="" alt="">
+    </div>
+</body>
+<script>                    
+                               
+                    //single element single
+
+    // let a = document.all;
+    // a = document.getElementById('child1');
+    // //a = a.childNodes;// will print the node list
+    // // a = a.parentNode;
+    // // a=a.innerText;
+    // // a=a.innerHTML;
+    // a.style.color ="red";
+    // a.innerText = "sam is a good boy";
+    // a.innerHTML = "<b>sam is a good boy</b>";
+    // console.log(a);
+
+    //querySelector
+    let sel = document.querySelector('#child1');// ID name
+    sel = document.querySelector('.child');// class name -> this will show the first element with this class
+    sel = document.querySelector('h1');// tag name
+    console.log(sel);
+
+                   // multi element selectors
+    let elements = document.getElementsByClassName('child');
+    // elements = Array.from(elements);
+    console.log(elements);      
+
+    // chaining is passible here
+    let con = document.getElementsByClassName('container');
+    console.log(con[0].getElementsByClassName('child')); // no need to write document. twice  
+    
+    //how to change the property of an entire list of items
+    let div = document.getElementsByTagName('div');
+    Array.from(div).forEach(function(element){
+        console.log(element);
+        element.style.color = 'blue';
+    })
+
+</script>
+</html>

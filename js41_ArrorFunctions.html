@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+//method 1
+function sam1(){
+    console.log("my name is sambhav1");
+}
+sam1();
+
+//method 2
+const sam2 = function (){
+    console.log("my name is sambhav2");
+}
+sam2();
+
+//methos 3 (new -> arrow function)
+const sam3 = ()=>{
+    console.log('my name is sambhav3')
+}
+sam3();
+
+// using arror function to return something
+const sam4 = ()=>{
+    return 'my name is sambhav4';
+}
+console.log(sam4());
+// OR
+const sam5 = ()=> 'my name is sambhav5';
+console.log(sam5());
+//and
+const single = name => name;// single arguments donot need parenthises
+console.log(single('sambhav'));
+//but
+const double = (name, id) => `my name is ${name} with id ${id}`;// multiple arguments need parenthises
+console.log(double('sambhav', 7));
+
+
+
+</script>
+</html>

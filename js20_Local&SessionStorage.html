@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //Local storage -> is the part of windows object ->different web site have thier different localStorage
+
+    //clearing localStorage
+    localStorage.clear();
+
+    //adding item
+    localStorage.setItem('Name', 'sambhav');
+    localStorage.setItem('Name2', 'Katherine');
+    localStorage.setItem('Name3','jack');
+
+    //getting item
+    let name = localStorage.getItem('Name');
+    let name2 = localStorage.getItem('Name2');
+    console.log(name);
+    console.log(name2);
+
+    //getting key
+    console.log(localStorage.key(2));
+
+    //removing item
+    localStorage.removeItem('Name3');
+
+    //adding array
+    let arr = [1,2,3,4,5];
+    localStorage.setItem('arr',JSON.stringify(arr));
+
+    //gettting array
+    console.log(JSON.parse(localStorage.getItem('arr')));
+//--------------------------------------------------------------
+
+    //sessionStorage -> will get automatically cleared once the browser is closed
+
+    //clearing localStorage
+    sessionStorage.clear();
+
+    //adding item
+    sessionStorage.setItem('sessionName', 'sambhav');
+    sessionStorage.setItem('sessionName2', 'Katherine');
+    sessionStorage.setItem('sessionName3','jack');
+
+    //getting item
+    let sessionname = sessionStorage.getItem('sessionName');
+    let sessionname2 = sessionStorage.getItem('sessionName2');
+    console.log(sessionname);
+    console.log(sessionname2);
+
+    //getting key
+    console.log(sessionStorage.key(2));
+
+    //removing item
+    sessionStorage.removeItem('sessionName3');
+
+    //adding array
+    let sessionarr = [1,2,3,4,5];
+    sessionStorage.setItem('sessionarr',JSON.stringify(arr));
+
+    //gettting array
+    console.log(JSON.parse(sessionStorage.getItem('sessionarr')));
+</script>
+</html>

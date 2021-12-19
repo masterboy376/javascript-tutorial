@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+//Symbols are used to create special identifier
+//Note : symbol is not a constructor, it is a primitive type.
+let syml1 = Symbol('my identifier');
+let syml2 = Symbol('my identifier');
+console.log(syml1 === syml2);// two symbols cannot be equal
+
+let str1 = 'str';
+let str2 = 'str';
+console.log(str1 === str2);
+console.log(null === null);
+console.log(undefined === undefined);
+console.log(1 === 1);
+console.log(true === true);
+
+const k1 = Symbol('Identifier for k1');
+const k2 = Symbol('Identifier for k2');
+
+let obj = {};
+obj[k1]='sam1';
+obj[k2]='sam2';
+obj["name"]='sambhav kaushik';
+console.log(obj);
+console.log(obj[k1]);
+console.log(obj[k2]);
+console.log(obj.k1);// this is wrong
+console.log(obj['k1']);// this is wrong
+
+//note: symbols are ignored in for in loop
+for (key in obj){
+    console.log(key, obj[key]);
+}
+//note: symbols are ignored in JSON.stringify
+console.log(JSON.stringify(obj));
+
+</script>
+</html>

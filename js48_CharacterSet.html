@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+let regex = /s[ry]m/;// whether r or y can be between s and m
+regex = /s[r-y]m/;// anything between r and y can be between s and m
+regex = /s[^r-y]m/;// anything except between r and y can be between s and m
+regex = /s[^as0-9]m/;// anything except s and a 0 to 9 can be between s and m
+//character set is case sensitive
+
+//quantifiers
+regex = /sa{9}m/;// a should come 9 times
+//regex = /^sa{4}/;// --> not valid
+regex = /sa{1,9}m/;// a should come 1 to 9 times
+regex = /(sa){1,2}[a-z]/;// sa should come 1 to 2 times
+
+const str = `sam bhai sSm saaaaaaaaam sasam`;
+
+let result = regex.exec(str);
+console.log(`the result of exec is `, result);
+
+if(regex.test(str)){
+    console.log(`the string "${str}" matches the expression "${regex.source}"`);
+}
+else{
+    console.log(`the string "${str}" does not matches the expression "${regex.source}"`);
+}
+
+</script>
+</html>

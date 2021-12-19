@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Exercise 2</h1>
+        <div id="myFirst">edit the above para</div>
+    </div>
+
+</body>
+<script>
+    //div
+    let divElem = document.createElement('div');
+    
+    //text inside div
+    let val = localStorage.getItem('text');
+    let text;
+    if(val==null){
+    text = document.createTextNode('click to edit');
+    }
+    else{
+    text = document.createTextNode(val);
+    }
+    divElem.appendChild(text);
+
+    //setting attributes
+    divElem.setAttribute('id', 'elem');
+    divElem.setAttribute('class', 'elems');
+    
+    //getting other elements
+    let container =  document.querySelector('.container');
+    let myFirst =  document.querySelector('#myFirst');
+
+    //insereting
+    container.insertBefore(divElem, myFirst);
+
+    //on click
+    divElem.addEventListener('click', function(e){
+        let textarea_num = document.getElementsByClassName('text-area').length;
+        if(textarea_num == 0){
+        let html = elem.innerHTML;// elem is id of new divElem
+        elem.innerHTML  = `<textarea name="text-area" class="text-area" id="text-area" cols="30" rows="10">${html}</textarea>`;
+        }
+
+        let textarea  = document.getElementById('text-area');
+        textarea.addEventListener('blur' , function(e){
+            localStorage.setItem('text', textarea.value);
+          elem.innerHTML = textarea.value;
+        })
+    });
+
+
+
+</script>
+
+</html>

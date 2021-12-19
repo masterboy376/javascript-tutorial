@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //creating function
+    function greetMorning (name = 'User'){
+        console.log(`good morning ${name}`);
+    }
+    function greetNight (name){
+        return (`good night ${name}`);
+        console.log("end");// will not execute
+    }
+
+    //calling functions
+    let name1 = "Sambhav";
+    let name2 = "Katherine";
+    greetMorning(name1);
+    console.log(greetNight(name2));
+    let msg = greetNight(name2);
+
+    // function in objects
+    let obj = {
+        name: 'sam',
+        game: function(gameName) {// anoynomus function
+            return gameName;
+        }
+    }
+    console.log(obj.game('GTA 5'));
+
+    // function to iterate a array
+    let arr =[1,2,3,4,5,6,7,8,9];
+    arr.forEach(function(element, index){
+        console.log(index +' : '+ element);
+    }) 
+
+    //scope of a function
+    let i = 10;
+    function num1(){
+        let i = 7;// global i will not be modified
+        return i;
+    }
+    console.log(num1(), i);
+    // the scope of let is only under block
+    function num2(){
+        i = 7;// global i will be modified
+        return i;
+    }
+    console.log(num2(), i);
+
+
+    const j = 10;
+    function num3(){
+        let j = 7;// global i will not be modified
+        return j;
+    }
+    console.log(num3(), j);
+    // the scope of let is only under block
+    function num4(){// this is not possible with const
+       // j = 7;// global i will be modified
+       // return j;
+    }
+    console.log(num4(), j);
+    //const and let both have block level scope
+
+
+</script>
+</html>

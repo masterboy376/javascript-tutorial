@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function organism(species, doesFly, doesWalk, doesSwim){
+        this.species = species;
+        this.fly = doesFly;
+        this.walk = doesWalk;
+        this.swim = doesSwim;
+        this.description = function(){
+            console.log(`${this.species} , doesWalk: ${this.walk} , doesFly: ${this.fly} , doesSwim: ${this.swim}.`)
+        }
+    }
+    // note: you can change the prototype of a construnctor, but not of an object
+
+    //adding prototypes
+    organism.prototype.setSpecies  = function( newSpecies){
+        this.species = newSpecies;
+    }
+    organism.prototype.getSpecies  = function(){
+        return this.species;
+    }
+    let human = new organism('human', false, true, true);
+    console.log(human);
+    human.setSpecies('dog');
+    console.log(human.getSpecies());
+    console.log(human.toString());
+</script>
+</html>

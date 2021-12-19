@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+/*promise: resolve, reject, or pending --> in the real world*/
+
+// function func1(){
+//     return new Promise(function(resolve, reject){
+//         setTimeout(() => {
+//             let error = true;
+//             if(!error){
+//                 console.log('func1: you promise has been resolved.');
+//                 resolve('reason: api was found');
+//             }
+//             else{
+//                 console.log('func1: you promise has been rejected.');
+//                 reject('reason: some api error occured!');
+//             }
+//         }, 2000);
+//     })
+// }
+
+// func1().then(function(resolveInput){// resolve
+//     console.log('sam: thenks for resolving! '+resolveInput);
+// }).catch(function(rejectInput){// reject
+//     console.log('sam: sorry for rejecting! ' + rejectInput);
+// })
+
+//-------------------------------------------------------------------------------------------------------------------
+//js39 into promise
+
+const students = [
+        { name: "sam", subject: "js" },
+        { name: "sambhav", subject: "AI development" }
+    ];
+
+    function enrollStudent(student) {
+        return new Promise(function(resolve, rejrct){
+            setTimeout(() => {
+                let error = false;
+            students.push(student);
+            console.log(`${student.name}, studying ${student.subject}, has been enrolled!`);
+            if(!error){
+                resolve();
+            }
+            else{
+                reject('error occured during enrolling the new student');
+            }
+            }, 3000);
+        })
+    }
+    function getStudents() {
+        setTimeout(function () {
+            let uiString = ``;
+            students.forEach(function (student) {
+                    console.log(`name: ${student.name}, subject: ${student.subject}`);
+            });
+        }, 1000);
+    }
+
+    let newStudent = {name: "kathy", subject: "python"};
+    enrollStudent(newStudent).then(getStudents).catch(function(error){
+        console.log(error);
+    })
+
+</script>
+</html>

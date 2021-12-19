@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+let num = [1,2,3,4,5,6,7,8,9];
+let myStirng = 'I am sam';
+let obj = {
+    name:'sam',
+    language:'js',
+    hobbies:'software development',
+}
+
+//for
+for(let i = 0; i<Object.keys(obj).length; i++){
+    console.log(`${Object.keys(obj)[i]}; ${obj[Object.keys(obj)[i]]}`)
+}
+
+//for-in --> manily for object
+for (let key in num){
+    console.log(`${key}: ${num[key]}`);
+}
+for (let key in obj){
+    console.log(`${key}: ${obj[key]}`);
+    //console.log(`${key}: ${obj.key}`);// this will not work because key is string. 
+}
+for (let char in myStirng){
+    console.log(`${char}: ${myStirng[char]}`);
+}
+
+//for-of --> mainly for array
+for (let number of num){// array is itratable
+    console.log(number);
+}
+for (let value of myStirng){// string is itratable
+    console.log(value);
+}
+//this can be used in the DOM collections without converting them into an array.
+
+</script>
+</html>

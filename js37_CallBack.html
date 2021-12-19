@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Student list</h1>
+        <ul id="students">
+
+        </ul>
+    </div>
+
+</body>
+<script>
+
+    // callback is async.
+
+    //pretend that this response is from server
+    const students = [
+        { name: "sam", subject: "js" },
+        { name: "sambhav", subject: "AI development" }
+    ];
+
+    function enrollStudent(student, callback) {
+        setTimeout(function () {
+            students.push(student);
+            console.log(`${student.name}, studying ${student.subject}, has been enrolled!`);
+            callback();
+        }, 3000);// after 3.sec this will be done in background asynchromusly & here 3.sec is taken by the server to fetch data
+    }
+    function getStudents() {
+        setTimeout(function () {
+            console.log(`data has been fetched`);
+            let uiString = ``;
+            students.forEach(function (student) {
+                    uiString = uiString + `<li>name: ${student.name}, subject: ${student.subject}</li>`;
+            });
+            document.getElementById('students').innerHTML = uiString;
+        }, 1000);// after 1.sec this will be done in background asynchromusly & here 1.sec is taken by the server to fetch data
+    }
+    
+   
+    let newStudent = {name: "kathy", subject: "python"};
+
+    //async
+    // enrollStudent(newStudent); // this will take 3.sec in a async manner (execute later)
+    // getStudents();// this will only take 1.sec in a async manner (execute first)
+
+    //sync
+    enrollStudent(newStudent, getStudents);//getstudents() worked as a callback
+
+
+</script>
+
+</html>

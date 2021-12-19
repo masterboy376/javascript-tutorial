@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn" id="mybtn">your buttom</button>
+    <button class="btn">Fetch API</button>
+    <dic id="content">
+
+    </dic>
+</body>
+<script>
+    
+    function getData(){
+        fetch('js35_Ajax/employee.txt').then((response)=>{
+            return response.text();// this is for plain text. use json instead of json
+        }).catch(()=>{
+            console.log('some error occured during fetching data');
+        }).then((data)=>{
+            console.log(JSON.parse(data));
+        }).catch(()=>{
+            console.log('some error occured after getting data');
+        })
+    };// fetch will return a promise and then this promise will return a another promise
+    function postData(){
+        let data = {"name":"sambhav71","salary":"1243","age":"44323"};
+        let params = {
+            method: 'post',
+            header :{
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }
+        fetch('http://dummy.restapiexample.com/api/v1/create', params).then(response=>{return response.json();// this is for object
+        }).catch(()=>{
+            console.log('some error occured during fetching data');
+        }).then((Data)=>{
+            console.log(Data);
+        }).catch(()=>{
+            console.log('some error occured after getting data');
+        })
+    };
+    
+    // getData();
+    postData();
+
+    //--------------------------------------------------------------------------------------------------------------------
+
+
+</script>
+</html>

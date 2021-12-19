@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    //Arrays
+    const notArr = 5;
+    let marks = [99,97,98,93,95,99];
+    let mixArr = [1,true,"sam",1];
+    const arr = new Array(34,5,6,5,"sambhav");
+    console.log(arr);
+    console.log(mixArr[1]);
+    console.log(marks[2], marks[5]);
+
+    //Array properties
+    console.log(arr.length);
+
+    //Array methods
+    console.log(Array.isArray('notArr'));
+
+    mixArr[0] = 'sam';// would not be possible with const
+    console.log(mixArr);
+    
+    marks.push(100);// at last
+    marks.unshift(101);//in front
+    console.log(marks);
+    
+    console.log(marks.indexOf(99));
+    console.log(marks.lastIndexOf(99));
+
+    marks.pop();// remove a element from last
+    marks.shift();// remove a elemenet from start
+    console.log(marks);
+
+    marks.splice(1,2);//start from index 1 and remove 2 elements from there
+    console.log(marks);
+
+    marks.reverse();
+    console.log(marks);
+
+    marks2=[99,99,98,97,90];
+    marks = marks.concat(marks2);// would not be possible with const
+    console.log(marks);
+
+    //--------------------------------------------------------
+    //objecct
+    let myObj = {
+       'first name': 'sam',
+        firstName: "sam",
+        marks:[100,100,100,100,100,100]
+    }
+    console.log(myObj);
+    console.log(myObj.firstName);
+    console.log(myObj.marks);
+    console.log(myObj['first name']);
+
+</script>
+</html>

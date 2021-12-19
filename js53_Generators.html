@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+//Generators-->will generate the values on the fly. It is better than large arrays because it takes less memory
+function* numbersGen(){
+    let i =0;
+
+    // yield 1;
+    // yield 2;
+    // yield 3;
+    // yield 4;
+    // while(true){
+    //     yield (i++).toString();
+    // }
+    while(true){
+        let a = i++;
+        yield (a).toString();
+    }
+}
+
+let gen = numbersGen();
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen);
+
+</script>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+// for loop
+for (let i =0; i<100; i++){
+    console.log(i);
+}
+
+// while loop
+let j = 0;
+while(j<100){
+    console.log(j);
+    j++;
+}
+
+// do while loop
+let k = 0;
+do{
+    console.log(j);
+    j++;
+}while(j<100);
+let m = 0
+do{
+    if(m===5){
+        m =+1;
+        break;// break the loop
+    }
+    console.log(m);
+    m++;
+}while(m<10);
+let n = 0;
+do{
+    if(n===5){
+        n += 1;
+        continue;// skip a upcoming itration in this loop
+    }
+    console.log(n);
+    n +=1;
+}while(n<10);
+
+// for each loop
+let arr = [1,2,3,4,5];
+arr.forEach(function(element, index, array){
+    console.log(element, index, array);
+});
+
+//for in loop
+let obj={
+    name: 'sam',
+    age: 16
+}
+for(let key in obj){
+    console.log(`${key} of obj is ${obj[key]}`);
+}
+
+
+
+</script>
+</html>

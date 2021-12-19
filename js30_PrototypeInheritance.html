@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+// complicated
+
+    const proto = {
+        slogan: function(){
+            return 'this is best';
+        },
+        change: function(newName, newRole){
+            this.name =  newName;
+            this.role =  newRole;
+        }
+    }
+    // creating a prototype
+    const sam = Object.create(proto);
+    sam.name  = "sambhav";
+    sam.role  = "programmer";
+
+//another syntax
+    const obj = Object.create(proto, {
+        name: {value: "sambhav", writable:true},// can be changed
+        role: {value: "programmer"}// cannot be changed
+    })
+    sam.change("sambhav2");
+    console.log(sam);
+//----------------------------------------------------------------------------------
+    //employee constructor
+    function Employee(name, salary, exprience){
+        this.name = name;
+        this.salary = salary;
+        this.exprience = exprience;
+    }
+    Employee.prototype.slogan= function(){
+        return `i am the best. regards ${this.name}`;
+    };
+    let sambhav = new Employee('Sambhav', 40209240904, '0 years');
+    console.log(sambhav.slogan());
+    console.log(sambhav);
+
+    //inherit the constructor
+    function programmer(name, salary, experience, language){
+        Employee.call(this, name, salary, experience);
+        this.language = language;
+    }
+    // inherite the prototype
+    programmer.prototype = Object.create(Employee.prototype);
+    //manually setting the constructor
+    programmer.prototype.constructor = programmer;
+
+    let samThePro =new programmer('sambhav', 10203383, '4 years', 'all');
+    console.log(samThePro.slogan());
+//----------------------------------------------------------------------------------
+//quiz
+function flour(type, amount){
+    this.type =type;
+    this.amount=amount;
+}
+flour.prototype.taste = function(){
+    return `taste of ${this.type} and ${this.flavour} is mindblowing. amount of ${this.amount} is crazy.`
+}
+let roti = new flour('flour', 'half pound');
+
+function cake(type, amount, flavour){
+    flour.call(this, type, amount);
+    this.flavour = flavour;
+}
+cake.prototype = Object.create(flour.prototype);
+cake.prototype.canstructor = cake;
+
+let chocolateTrufle = new cake("extra topings" , "2  pounds", "chocolate");
+console.log(chocolateTrufle.taste());
+</script>
+</html>

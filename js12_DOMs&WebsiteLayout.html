@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="heading">this is heading</h1>
+        <div class="child" id="child1">child1</div>
+        <div class="child" id="child2">child2</div>
+        <div class="child" id="child3">child3</div>
+        <div class="child" id="child4">child4</div>
+        <form action="" method="post">
+            <input type="text" name="" id="">
+            <input type="submit" value="submit">
+        </form>
+        <form action="" method="post">
+            <input type="text" name="" id="">
+            <input type="text" name="" id="">
+            <input type="submit" value="submit">
+        </form>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <img src="" alt="">
+        <img src="" alt="">
+    </div>
+</body>
+<script>
+    //document is a object
+    let a;
+    a = document;
+    a = document.all;// this is not an array so you can not use foreach loop or any other array function here here
+    a = document.body;
+    a= document.forms;// this will target first form
+    a= document.forms[0];// this will target first form
+    a= document.forms[1];// this will target second form
+    a= document.links;
+    a= document.links;// this will target the first link of the page
+    a= document.links[0];// this will target the first link of the page
+    a= document.links[1];// this will target the second link of the page
+    a= document.links[1].href;
+    a = document.scripts;
+    a= document.images;
+    console.log(a);
+
+    //creating array from document.all
+    a= document.all;
+    arr = Array.from(a);
+    console.log(arr);
+    arr.forEach(function(element, index){
+        console.log(element , index);
+    })
+
+</script>
+<script src=""></script>
+
+</html>

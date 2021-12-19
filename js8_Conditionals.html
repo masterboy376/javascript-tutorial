@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+//if-else
+const age = 16;
+// var vari = 10;
+
+if(age < 18 || age>5){
+    console.log("you can not drive!");
+}
+else if(age >= 18 && age<=20){
+    console.log("you can drive under some conditions!");
+}
+else{
+    console.log("you can drive!");
+}
+// == -> will only check value is equal
+// === -> will check both value and type is equal
+// != -> will only check value is not equal
+// !== -> will check both value and type is not equal
+
+if(typeof vari !== 'undefined'){
+    console.log('vari is defined');
+}
+else{
+    console.log('vari is not defined');
+}
+//-----------------------------------------------------------
+//ternury operators
+console.log(age==45? 'age is 45':'age is not 45');
+//-----------------------------------------------------------
+//switch
+switch (age){
+    case 18 : console.log('you are 18');
+    break;// go out of switch statement sfter this
+    case 28 : console.log('you are 28');
+    break;// go out of switch statement sfter this
+    case 38 : console.log('you are 38');
+    break;// go out of switch statement sfter this
+    case 48 : console.log('you are 48');
+    break;// go out of switch statement sfter this
+    default: console.log('you are not 18,28,38,48');
+    break;// go out of switch statement sfter this
+}
+//OR
+
+
+
+</script>
+</html>

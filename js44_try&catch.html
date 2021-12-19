@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+//pretend this is coming from the server
+let a ='sambhav';
+// a = undefined;
+if(a != undefined){
+    console.log(a);
+}
+else{
+    throw new Error('a is undefined');// js interpreter will stop here if error occured
+}
+
+
+try {
+    console.log('let us call a fake function');
+    fake();
+} catch (error) {
+    // console.log('error comes: ', error);
+    console.log('are you okay?');
+    console.error(error);
+    console.log('above are all the errors')
+    console.log('errorName: ',error.name);
+    console.log('errorMessage: ',error.messagae);
+} finally{
+    console.log('finally we will this.');
+}
+
+</script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <form action="none.html">
+    <button type="submit" id="btn">Dream button</button>
+    </form><br>
+    <span id="less-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo iusto commodi, autem animi modi reiciendis. </span><span id="para"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus a magnam qui esse, quibusdam vero blanditiis minus porro ipsa dolor optio quam aspernatur facere aliquam ipsum omnis nulla modi quo corrupti quidem, eum laboriosam! Odio fuga ducimus optio voluptas fugit?</span><br>
+    <button type="button" id="btn1">show less</button>
+    
+</body>
+<script>
+
+let btn =document.getElementById('btn');
+btn.addEventListener('click', func);
+function func(e){
+    console.log('thanks', e);
+    e.preventDefault();// this will not submit the form
+    location.href = "//codewithharry.com";
+}
+//--------------------------------------------------------------
+let para = document.getElementById('para');
+let btn1 = document.getElementById('btn1');
+let body = document.getElementById('body');
+//click -> only left click
+btn1.addEventListener('click',function(){
+    para.style.display='none';
+    btn1.innerText = 'show more';
+})
+//dblclick
+btn1.addEventListener('dblclick',function(){
+    para.style.display='inline';
+    btn1.innerText = 'show less';
+})
+// mousedown => any kind of click
+btn1.addEventListener('mousedown',function(){
+    para.style.display='none';
+    btn1.innerText = 'show more';
+})
+//mouseenter
+btn1.addEventListener('mouseenter',function(){
+    console.log('you entered btn1');
+})
+//mouseout
+btn1.addEventListener('mouseleave',function(){
+    console.log('you left btn1');
+})
+//mousemove
+body.addEventListener('mousemove',function(e){
+    body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, ${e.clientX})`;
+    console.log('you moved the mouse inside btn1');
+})
+
+</script>
+</html>

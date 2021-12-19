@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+let reg = /sam/;//this is a regular expression in js
+reg=/sam/i;//i means case insenstivity 
+reg=/sam/g;//g will search the entire string-global
+console.log(reg);
+console.log(reg.source);
+
+//-----------------------------------------------------------
+//function to match expression
+let s = 'this is great code with sAm and also sam bhai sam sam samsam';
+
+let result = reg.exec(s);// this will return the array for match and null for no match ----> index-24
+result = reg.exec(s);// this will return the array for match and null for no match ----> index-37 (only work if the regular expression is global)
+result = reg.exec(s);// this will return the array for match and null for no match ----> null means no more sam in the string (only work if the regular expression is global)
+// we can use multiple exec with global flag
+
+result= reg.test(s);// this will give true if 'reg' is there in string 's' otherwise returns false
+
+//result = reg.match(S); --> this is wrong
+result = s.match(reg);// this will return the array if 'reg' is in 's' otherwise null (also this will return array of all the matches only with global flag) -> this will used when exec will become complex
+
+result = s.search(reg);//this will return the index of the first match else -1
+
+result = s.replace(reg, 'Sambhav');//this will replace the first match with 'Sambhav'( all will be replaced with 'Sambhav' if the reg has global flag)
+
+
+
+
+
+console.log(result);
+
+</script>
+</html>

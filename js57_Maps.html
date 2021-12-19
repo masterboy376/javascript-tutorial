@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+// Maps in js: we can use any type of key or value pairs
+const myMap = new Map();
+const key1 = 'mystr',
+key2 = [1,1,2,5.9],
+key3= {},
+key4 = function(){};// you can separate them either
+ 
+//setting map values
+myMap.set(key1, 'mystr');
+myMap.set(key2, 'this is an array');
+myMap.set(key3, 'this is a blank object');
+myMap.set(key4, 'this is a blank function');
+console.log(myMap);
+
+//getting the vlaues
+console.log(myMap.get(key1));
+console.log(myMap.get(key2));
+console.log(myMap.get(key3));
+console.log(myMap.get(key4));
+
+//map size
+console.log(myMap.size);
+
+//for-of loop
+for (let [ky, val] of myMap){
+    console.log(ky, val);
+}
+for (let keys of myMap.keys()){
+    console.log(keys);
+}
+for (let values of myMap.values()){
+    console.log(values);
+}
+
+//for-each loop
+myMap.forEach((value, key)=>{
+    console.log(key, value);
+})
+
+//converting map to array
+let myArray = Array.from(myMap);
+console.log(myArray);
+
+//converting map-keys to array
+let myArrayKeys = Array.from(myMap.keys());
+console.log(myArrayKeys);
+
+//converting map-value to array
+let myArrayValues = Array.from(myMap.values());
+console.log(myArrayValues);
+
+</script>
+</html>

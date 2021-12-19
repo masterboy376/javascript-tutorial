@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+let regex = /Sambhav/;
+
+//metacharacter
+regex = /^S/;// starts with 'S'
+regex = /av$/;// ends with 'av'
+regex = /Sambhavv./;// . could be any( exactly) one character
+regex = /S*v/;// * could be 0 or more character
+regex = /Sa?mbhavi?/;// ? means 'a' and 'i' are optional
+regex = /S\*mbhav/;// \ -> is used to symbolise  any character within the string
+
+let str = `Smbhav S*mbhav is a good boy. Sambhav wants to earn a trillion dollar. Sambhav is a programmer. sambhav is a entreprenuer Sambhavvv`;
+
+let result = regex.exec(str);
+console.log(`the result of exec is `, result);
+
+if(regex.test(str)){
+    console.log(`the string "${str}" matches the expression "${regex.source}"`);
+}
+else{
+    console.log(`the string "${str}" does not matches the expression "${regex.source}"`);
+}
+
+</script>
+</html>

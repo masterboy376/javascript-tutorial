@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box"></div>
+
+
+</body>
+<script>
+    // string methods
+    let name = "sam";
+    let greet = "good morning";
+    console.log(greet + " " + name);
+
+    let html;
+    html = "<h1> this is h1</h1> " + "<p> this is p </p>";
+    html1 = "<h1> this is h1</h1> " + "<p> this is p </p>";
+
+    //concat
+    html = html.concat(' this ', 'is me');
+    console.log(html);
+
+    //length
+    console.log(html.length);
+
+    //toLowerCase
+    console.log(html.toLowerCase());
+
+    //toUpperCase
+    console.log(html.toUpperCase());
+
+    //indexing
+    console.log(html[0]);
+    console.log(html[1]);
+    console.log(html[4]);
+    console.log(html[7]);
+
+    //indexOf -> is string do not exists then the index will be -1
+    console.log(html.indexOf('this'));
+
+    //lastIndexOf
+    console.log(html.lastIndexOf('this'));
+
+    //charAt
+    console.log(html.charAt('16'));
+
+    //endsWith
+    console.log(html.endsWith('his is me'));
+
+    //startsWith
+    console.log(html.startsWith('<h1>'));
+
+    //includes
+    console.log(html.includes('si'));
+    console.log(html.includes('s'));
+
+    //substring(including,excluding)
+    console.log(html.substring(1, 7));
+
+    //slice
+    console.log(html.slice(-4));//last four  
+    console.log(html.slice(0, 4));//zero four -> both are including
+
+    //split***********
+    console.log(html.split(" ")); // this will divide the string into every space
+    console.log(html.split("h"));
+
+    //replace -> this function will replace the first input
+    console.log(html.replace('this', 'these'));
+
+    //-----------------------------------------------------
+
+    //template literals
+    let fruits = ['banana', 'apple'];
+    let myStr = `My name is ${name} 
+    <h1> I mostly eat ${fruits[0]}. </h1> 
+    <p> but i can also eat ${fruits[1]} </p> `;
+    console.log(myStr);
+    
+    document.body.innerHTML = myStr;
+
+    //-------------------------------------------------------
+
+    //quiz
+    let Sno = [1,2,3,4,5]; 
+    let namearr = ['sam','kathy', 'max', 'shauna', 'pym']; 
+    for (let index = 0; index < Sno.length; index++) {
+         str = `${Sno[index]}. ${namearr[index]} `;
+         document.body.innerHTML = str;
+    }
+    
+</script>
+
+</html>

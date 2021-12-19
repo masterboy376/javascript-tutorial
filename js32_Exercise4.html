@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    class library {
+        constructor(books) {
+            this.availableBooks = books;
+            this.issuedBook = {};
+        }
+        getBookList() {
+            this.availableBooks.forEach(function (element, index) {
+                console.log(`${(index + 1)}. ${element}`);
+            });
+        }
+        issueBook(bookname, user) {
+            let indicator = false;
+            for (let i = 0; i < this.availableBooks.length; i++) {
+                if (bookname === this.availableBooks[i]) {
+                    if (this.issuedBook[bookname] == undefined) {
+                        this.issuedBook[bookname] = user;
+                    }
+                    else {
+                        console.log(`this book has alredy been issued`);
+                    }
+                    this.availableBooks.splice(i, 1);
+                    indicator=true;
+                }
+            }
+            if(indicator===true){
+            console.log(`${bookname} has been issued to ${user}.`);
+            }
+            else{
+                console.log(`${bookname} is not available`);
+            }
+
+        }
+        returnBook(bookname) {
+            delete this.issuedBook[bookname];
+            this.availableBooks.push(bookname);
+            console.log(`${bookname} has been returned.`);
+        }
+    }
+
+    let booksInSamLib = ['a', 'b', 'c', 'd'];
+    let SamLib = new library(booksInSamLib);
+    SamLib.getBookList();
+    SamLib.issueBook('a', 'sambhav');
+    SamLib.getBookList();
+    console.log(SamLib.issuedBook);
+    SamLib.returnBook('a');
+    console.log(SamLib.issuedBook);
+    SamLib.getBookList();
+
+</script>
+
+</html>

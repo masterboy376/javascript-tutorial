@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    //class
+    class employee {
+        constructor(givenName, givenExperince, givenRole) {
+            this.name = givenName;
+            this.experience = givenExperince;
+            this.role = givenRole;
+        }
+        slogan(){
+            return `my name is ${this.name} and i am the best.`;
+        }
+        joiningYear(){
+            return 2021-this.experience;
+        }
+        static add(a,b){// this is static function bcoz it is not using any arguments from this class or constructor. Hence, this function can be used without invoking this class.
+            return a+b;
+        }
+    }
+
+    //obj
+    let sam = new employee('sambhav', 3, 'coderpreneur');
+    console.log(sam);
+    console.log(sam.slogan());
+    console.log(sam.joiningYear());
+
+    console.log(employee.add(50,3));// using static function
+
+    //----------------------------------------------------------
+    // inheritance
+    class programmer extends employee{
+          constructor(givenName, givenExperince, givenRole,givenLanguage){
+              super(givenName, givenExperince, givenRole);
+              this.language = givenLanguage;
+          }
+          favlang(){
+              if(this.language == 'python'){
+                  return 'python';
+              }
+              else{
+                  return 'js';
+              }
+            }
+            static multiply(a,b){
+                return a*b;
+            }
+    }
+    // now programmer will run all the functions of employee
+    let sambhav = new programmer('sambhav' , 5, 'master', 'all');
+    console.log(sambhav.favlang());
+    console.log(sambhav.joiningYear());
+    console.log(sambhav.slogan());
+    console.log(programmer.add(2,5));
+    console.log(programmer.multiply(2,5));
+</script>
+
+</html>

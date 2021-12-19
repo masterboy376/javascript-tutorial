@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let car = {
+        name:'roles royce',
+        topSpeed:'86km/hr',
+        run: function(speed){
+            console.log('running at speed '+ speed)
+        },
+        openDoor: function(){
+            console.log('tuk');
+        }
+    }
+    car.run(1);
+
+    // using constructors to create obj
+    function generalCar(carName, maxSpeed){
+        this.name = carName;
+        this.topSpeed = maxSpeed;
+        this.run = function(){
+            console.log(`${this.name} is running at ${this.topSpeed}`);
+        }
+        this.analyze = function(){
+            console.log(`${this.name} is slower by ${200 - this.topSpeed} than lambo`);
+        }
+    }
+
+    //making pbject from a constructor
+    let car1 = new generalCar('buggati', 200);
+    let car2 = new generalCar('kaush', 400);
+    console.log(car1);
+    console.log(car2);
+
+</script>
+</html>
